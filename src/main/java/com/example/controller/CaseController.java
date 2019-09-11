@@ -7,12 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author iisheng
  * @date 2019/08/21 11:21:38
  */
 @Controller
-@RequestMapping("/case")
+@RequestMapping("")
 public class CaseController {
 
     @Autowired
@@ -24,7 +26,7 @@ public class CaseController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}.html")
+    @GetMapping("/case/{id}.html")
     public String getById(@PathVariable Long id, Model model) {
         CaseDO caseDO = caseService.getById(id);
         model.addAttribute("caseModel", caseDO);
@@ -40,6 +42,8 @@ public class CaseController {
      */
     @GetMapping("/home.html")
     public String home(@RequestParam(defaultValue = "0") int page, Model model) {
+        List<CaseDO> list = caseService.queryByPage(page);
+        model.addAttribute("list", list);
         return "index";
     }
 

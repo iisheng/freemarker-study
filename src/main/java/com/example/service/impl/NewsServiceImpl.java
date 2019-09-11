@@ -4,6 +4,7 @@ import com.example.entity.NewsDO;
 import com.example.mapper.NewsMapper;
 import com.example.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author iisheng
  * @date 2019/09/11 11:44:32
  */
+@Service
 public class NewsServiceImpl implements NewsService {
 
     @Autowired
