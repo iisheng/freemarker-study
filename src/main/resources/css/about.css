@@ -1,0 +1,51 @@
+.content_wrap{
+    margin:100px auto 100px;
+    width: 70%;
+}
+.left{
+    float: left;
+    columns: #595757;
+    margin-left: 150px;
+    font-size: 27px;
+}
+.right{
+    float: right;
+    width: 60%;
+    color: #5f6061;
+    font-size: 18px;
+    line-height: 2;
+}
+.title{
+    color: #db0445;
+}
+.service01{
+    margin-top: 50px;
+}
+.environment{
+    margin-top: 50px;
+}
+
+@media screen and (max-width:750px){
+    .content_wrap{
+        width: 94%;
+    }
+    .left{
+        float: none;
+        margin-left: 0px;
+        margin-bottom: 15px;
+    }
+    .right{
+        float: none;
+        width: 100%;
+    }
+    .service01{
+        margin-top: 30px;
+    }
+    .environment{
+        margin-top: 30px;
+    }
+}
+
+
+
+

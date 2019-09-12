@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-display: "PingFang SC", "HanHei SC", "Helvetica Neue", Microsoft Yahei, "Helvetica", "STHeitiSC-Light", "Arial", sans-serif;
+}
+
+/*清除浮动*/
+.clearfix:before,
+.clearfix:after{
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix{
+  *zoom: 1;
+}
+

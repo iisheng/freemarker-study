@@ -1,0 +1,50 @@
+
+
+/* 文章样式 */
+.article{
+    width: 70%;
+    margin:150px auto 100px;
+    color: #5f6061;
+}
+.left{
+    float: left;
+    margin-left: 170px;
+}
+.time{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.right{
+    width: 700px;
+    float: right;
+}
+.content p{
+    line-height: 2;
+}
+.title{
+    color: #0f0b09;
+    font-size: 24px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 40px;
+}
+
+
+@media screen and (max-width:750px){
+    .article{
+        width: 94%;
+        margin:90px auto 50px;
+    }
+    .left{
+        float: none;
+        margin-left: 0px;
+    }
+    .right{
+        width: 100%;
+    }
+    .title{
+        margin-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 15px;
+    }
+}
