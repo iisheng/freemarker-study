@@ -6,7 +6,9 @@ import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author iisheng
@@ -34,6 +36,9 @@ public class CaseServiceImpl implements CaseService {
 
     @Override
     public List<CaseDO> queryByPage(int page) {
-        return null;
+        Map map = new HashMap<>();
+        map.put("cursor", page * 10);
+        map.put("size", 10);
+        return caseMapper.queryByCursor(map);
     }
 }

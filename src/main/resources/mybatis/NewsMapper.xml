@@ -3,11 +3,11 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.NewsMapper">
-    <select id="selectById" resultType="com.example.entity.NewsDO">
+    <select id="selectById" parameterType="map" resultType="com.example.entity.NewsDO">
         select * from t_news where id = #{id}
     </select>
 
-    <select id="queryByPage" resultType="com.example.entity.NewsDO">
-        select * from t_news limit #{page}*10, 10
+    <select id="queryByCursor" parameterType="map" resultType="com.example.entity.NewsDO">
+        select * from t_news limit #{cursor}, #{size}
     </select>
 </mapper>

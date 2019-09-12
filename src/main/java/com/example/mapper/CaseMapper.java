@@ -3,6 +3,7 @@ package com.example.mapper;
 import com.example.entity.CaseDO;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author iisheng
@@ -30,8 +31,8 @@ public interface CaseMapper {
     /**
      * 查询列表
      *
-     * @param page
+     * @param map
      * @return
      */
-    List<CaseDO> queryByPage(int page);
+    List<CaseDO> queryByCursor(Map map);
 }

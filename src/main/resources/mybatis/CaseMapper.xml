@@ -7,7 +7,7 @@
         select * from t_case where id = #{id}
     </select>
 
-    <select id="queryByPage" resultType="com.example.entity.CaseDO">
-        select * from t_case limit #{page}*10, 10
+    <select id="queryByCursor" resultType="com.example.entity.CaseDO">
+        select * from t_case limit #{cursor}, #{size}
     </select>
 </mapper>

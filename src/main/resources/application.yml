@@ -1,4 +1,6 @@
 spring:
+  resources:
+    static-locations: classpath:static/
   freemarker:
     allow-request-override: false
     cache: true
@@ -34,4 +36,3 @@ mybatis:
   type-aliases-package: com.example.mapper
   configuration:
     map-underscore-to-camel-case: true
-

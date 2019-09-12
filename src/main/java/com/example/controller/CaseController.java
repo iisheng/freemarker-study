@@ -44,7 +44,7 @@ public class CaseController {
     public String home(@RequestParam(defaultValue = "0") int page, Model model) {
         List<CaseDO> list = caseService.queryByPage(page);
         model.addAttribute("list", list);
-        return "index";
+        return "cases";
     }
 
 }

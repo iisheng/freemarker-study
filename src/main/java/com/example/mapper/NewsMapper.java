@@ -3,6 +3,7 @@ package com.example.mapper;
 import com.example.entity.NewsDO;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author iisheng
@@ -30,8 +31,8 @@ public interface NewsMapper {
     /**
      * 查询列表
      *
-     * @param page
+     * @param  map 包含 cursor 和 size
      * @return
      */
-    List<NewsDO> queryByPage(int page);
+    List<NewsDO> queryByCursor(Map map);
 }
