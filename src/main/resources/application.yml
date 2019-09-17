@@ -36,3 +36,4 @@ mybatis:
   type-aliases-package: com.example.mapper
   configuration:
     map-underscore-to-camel-case: true
+  type-handlers-package: com.example.config.mybatis

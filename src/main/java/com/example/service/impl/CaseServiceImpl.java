@@ -1,6 +1,7 @@
 package com.example.service.impl;
 
 import com.example.entity.CaseDO;
+import com.example.entity.CaseEnum;
 import com.example.mapper.CaseMapper;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class CaseServiceImpl implements CaseService {
     private CaseMapper caseMapper;
 
     @Override
+    public CaseDO create(CaseDO caseDO) {
+        return caseMapper.create(caseDO);
+    }
+
+    @Override
     public CaseDO getById(Long id) {
         return caseMapper.selectById(id);
     }
@@ -36,9 +42,21 @@ public class CaseServiceImpl implements CaseService {
 
     @Override
     public List<CaseDO> queryByPage(int page) {
-        Map map = new HashMap<>();
+        Map map = new HashMap<>(2);
         map.put("cursor", page * 10);
         map.put("size", 10);
+        return caseMapper.queryByCursor(map);
+    }
+
+    @Override
+    public List<CaseDO> queryByPageAndType(int page, CaseEnum type) {
+        Map map = new HashMap<>(3);
+        map.put("cursor", page * 10);
+        map.put("size", 10);
+        if (type != null) {
+            map.put("type", type.getCode());
+            return caseMapper.queryByPageAndType(map);
+        }
         return caseMapper.queryByCursor(map);
     }
 }

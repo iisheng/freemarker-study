@@ -11,6 +11,8 @@ import java.util.Map;
  */
 public interface CaseMapper {
 
+    CaseDO create(CaseDO caseDO);
+
     /**
      * 根据主键id获取用户信息
      *
@@ -35,4 +37,14 @@ public interface CaseMapper {
      * @return
      */
     List<CaseDO> queryByCursor(Map map);
+
+
+    /**
+     * 查询列表
+     *
+     * @param map
+     * @return
+     */
+    List<CaseDO> queryByPageAndType(Map map);
+
 }

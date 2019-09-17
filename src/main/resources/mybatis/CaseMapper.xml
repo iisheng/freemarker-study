@@ -10,4 +10,17 @@
     <select id="queryByCursor" resultType="com.example.entity.CaseDO">
         select * from t_case limit #{cursor}, #{size}
     </select>
+
+    <select id="queryByPageAndType" resultType="com.example.entity.CaseDO">
+        select * from t_case where type = #{type} limit #{cursor}, #{size}
+    </select>
+
+    <update id="update" parameterType="com.example.entity.CaseDO">
+        update t_case set description = #{param1}, customer_name= #{param2}
+    </update>
+
+    <update id="create" parameterType="com.example.entity.CaseDO">
+        insert into t_case values (#{param1},#{param2})
+    </update>
+
 </mapper>

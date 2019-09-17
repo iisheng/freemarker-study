@@ -44,4 +44,8 @@ public class CaseDO {
      * 修改时间
      */
     private Date modifyTime;
+    /**
+     * 分类
+     */
+    private CaseEnum type;
 }

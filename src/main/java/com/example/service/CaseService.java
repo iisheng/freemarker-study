@@ -1,6 +1,7 @@
 package com.example.service;
 
 import com.example.entity.CaseDO;
+import com.example.entity.CaseEnum;
 
 import java.util.List;
 
@@ -10,9 +11,13 @@ import java.util.List;
  */
 public interface CaseService {
 
+    CaseDO create(CaseDO caseDO);
+
     CaseDO getById(Long id);
 
     CaseDO update(Long id, CaseDO caseDO);
 
     List<CaseDO> queryByPage(int page);
+
+    List<CaseDO> queryByPageAndType(int page, CaseEnum type);
 }
