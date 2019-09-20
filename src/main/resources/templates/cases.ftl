@@ -89,21 +89,26 @@
 </div>
 <div class="imgListWrap">
     <ul class="ul01 clearfix">
-        <li class="imgItem fl01">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/01/1546411562_4867.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
+
+        <#list list as model>
+            <li class="${model.type}">
+                <a href="#">
+                    <img src="${model.image}"/>
+                    <div class="shadow">
+                        <p class="itemTitle">${model.title}</p>
+                        <p class="itemInfo">
+                            -
+                            <br/>
+                            <span class="sy1">${model.customerName}</span>
+                            <br>
+                            ${model.serviceContent}
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </#list>
+
+
         <li class="imgItem fl01">
             <a href="#">
                 <img src="http://cdn1.hzvis.com/upfile/image/2019/07/1562729435_6812.jpg"/>
@@ -119,96 +124,7 @@
                 </div>
             </a>
         </li>
-        <li class="imgItem fl03">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/04/1554087071_8215.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
-        <li class="imgItem fl04">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/01/1546411562_4867.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
-        <li class="imgItem fl05">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/01/1546411562_4867.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
-        <li class="imgItem fl02">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/07/1562729435_6812.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
-        <li class="imgItem fl03">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/04/1554087071_8215.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
-        <li class="imgItem fl02">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/01/1546411562_4867.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
+
     </ul>
 </div>
 <div class="lookMore_wrap">

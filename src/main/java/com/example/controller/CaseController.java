@@ -1,12 +1,14 @@
 package com.example.controller;
 
 import com.example.entity.CaseDO;
+import com.example.model.CaseModel;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,7 +45,18 @@ public class CaseController {
     @GetMapping("/home.html")
     public String home(@RequestParam(defaultValue = "0") int page, Model model) {
         List<CaseDO> list = caseService.queryByPage(page);
-        model.addAttribute("list", list);
+        List<CaseModel> result = new ArrayList<>();
+        list.forEach(caseDO -> {
+            CaseModel caseModel = CaseModel.builder()
+                    .title(caseDO.getTitle())
+                    .serviceContent(caseDO.getServiceContent())
+                    .image(caseDO.getImage())
+                    .customerName(caseDO.getCustomerName())
+                    .type("imgItem fl0" + caseDO.getType().getCode())
+                    .build();
+            result.add(caseModel);
+        });
+        model.addAttribute("list", result);
         return "cases";
     }
 
