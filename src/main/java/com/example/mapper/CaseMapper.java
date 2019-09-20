@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public interface CaseMapper {
 
-    CaseDO create(CaseDO caseDO);
+    void insert(CaseDO caseDO);
 
     /**
      * 根据主键id获取用户信息
@@ -24,11 +24,10 @@ public interface CaseMapper {
     /**
      * 更新
      *
-     * @param id
      * @param caseDO
      * @return
      */
-    int update(Long id, CaseDO caseDO);
+    int update(CaseDO caseDO);
 
     /**
      * 查询列表

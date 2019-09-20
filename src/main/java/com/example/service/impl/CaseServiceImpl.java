@@ -1,7 +1,6 @@
 package com.example.service.impl;
 
 import com.example.entity.CaseDO;
-import com.example.entity.CaseEnum;
 import com.example.mapper.CaseMapper;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,8 @@ public class CaseServiceImpl implements CaseService {
     private CaseMapper caseMapper;
 
     @Override
-    public CaseDO create(CaseDO caseDO) {
-        return caseMapper.create(caseDO);
+    public void create(CaseDO caseDO) {
+        caseMapper.insert(caseDO);
     }
 
     @Override
@@ -32,10 +31,13 @@ public class CaseServiceImpl implements CaseService {
     }
 
     @Override
-    public CaseDO update(Long id, CaseDO caseDO) {
-        int update = caseMapper.update(id, caseDO);
+    public CaseDO update(CaseDO caseDO) {
+        if (caseDO.getId() == 0) {
+            throw new RuntimeException("id不能为空");
+        }
+        int update = caseMapper.update(caseDO);
         if (update > 0) {
-            return getById(id);
+            return getById(caseDO.getId());
         }
         throw new RuntimeException("更新失败");
     }
@@ -49,12 +51,12 @@ public class CaseServiceImpl implements CaseService {
     }
 
     @Override
-    public List<CaseDO> queryByPageAndType(int page, CaseEnum type) {
+    public List<CaseDO> queryByPageAndType(int page, int type) {
         Map map = new HashMap<>(3);
         map.put("cursor", page * 10);
         map.put("size", 10);
-        if (type != null) {
-            map.put("type", type.getCode());
+        if (type != 0) {
+            map.put("type", type);
             return caseMapper.queryByPageAndType(map);
         }
         return caseMapper.queryByCursor(map);

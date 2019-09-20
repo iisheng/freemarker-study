@@ -4,23 +4,29 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.CaseMapper">
     <select id="selectById" resultType="com.example.entity.CaseDO">
-        select * from t_case where id = #{id}
+        SELECT * FROM t_case WHERE id = #{id}
     </select>
 
     <select id="queryByCursor" resultType="com.example.entity.CaseDO">
-        select * from t_case limit #{cursor}, #{size}
+        SELECT * FROM t_case LIMIT #{cursor}, #{size}
     </select>
 
     <select id="queryByPageAndType" resultType="com.example.entity.CaseDO">
-        select * from t_case where type = #{type} limit #{cursor}, #{size}
+        SELECT * FROM t_case WHERE `type` = #{type} limit #{cursor}, #{size}
     </select>
 
     <update id="update" parameterType="com.example.entity.CaseDO">
-        update t_case set description = #{param1}, customer_name= #{param2}
+        UPDATE t_case SET title= #{title}, description = #{description}, customer_name= #{customerName},
+        service_content = #{serviceContent}, publish_time = #{publishTime}, create_time = #{createTime},
+        modify_time = #{modifyTime}, `type` = #{type}, image = #{image} WHERE id = #{id}
     </update>
 
-    <update id="create" parameterType="com.example.entity.CaseDO">
-        insert into t_case values (#{param1},#{param2})
-    </update>
+    <insert id="insert" parameterType="com.example.entity.CaseDO"
+            keyProperty="id">
+		INSERT INTO t_case (title,description,customer_name,service_content,publish_time,
+		create_time,modify_time,`type`) VALUES (#{title}, #{description}, #{customerName},
+		#{serviceContent}, #{publishTime}, #{createTime}, #{modifyTime}, #{type}, #{image})
+
+	</insert>
 
 </mapper>

@@ -48,4 +48,8 @@ public class CaseDO {
      * 分类
      */
     private CaseEnum type;
+    /**
+     * 图片
+     */
+    private String image;
 }

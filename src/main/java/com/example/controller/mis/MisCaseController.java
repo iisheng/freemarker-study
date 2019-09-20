@@ -1,7 +1,6 @@
 package com.example.controller.mis;
 
 import com.example.entity.CaseDO;
-import com.example.entity.CaseEnum;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +26,8 @@ public class MisCaseController {
      */
     @GetMapping("/case/{id}")
     public CaseDO getById(@PathVariable Long id) {
-        CaseDO article = caseService.getById(id);
-        return article;
+        CaseDO caseDO = caseService.getById(id);
+        return caseDO;
     }
 
     /**
@@ -37,9 +36,8 @@ public class MisCaseController {
      * @return
      */
     @PostMapping("/case")
-    public CaseDO create(@RequestBody CaseDO param) {
-        CaseDO caseDO = caseService.create(param);
-        return caseDO;
+    public void create(@RequestBody CaseDO param) {
+        caseService.create(param);
     }
 
     /**
@@ -50,8 +48,12 @@ public class MisCaseController {
      */
     @PutMapping("/case/{id}")
     public CaseDO update(@PathVariable Long id, @RequestBody CaseDO param) {
-        CaseDO article = caseService.update(id, param);
-        return article;
+        if (id == null) {
+            throw new RuntimeException("id不能为空");
+        }
+        param.setId(id);
+        CaseDO caseDO = caseService.update(param);
+        return caseDO;
     }
 
     /**
@@ -61,7 +63,7 @@ public class MisCaseController {
      */
     @GetMapping("/cases")
     public List<CaseDO> queryByPage(@RequestParam(defaultValue = "0") int page,
-                                    @RequestParam(required = false) CaseEnum type) {
+                                    @RequestParam(required = false) int type) {
         return caseService.queryByPageAndType(page, type);
     }
 

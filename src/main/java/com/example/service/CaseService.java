@@ -11,13 +11,13 @@ import java.util.List;
  */
 public interface CaseService {
 
-    CaseDO create(CaseDO caseDO);
+    void create(CaseDO caseDO);
 
     CaseDO getById(Long id);
 
-    CaseDO update(Long id, CaseDO caseDO);
+    CaseDO update(CaseDO caseDO);
 
     List<CaseDO> queryByPage(int page);
 
-    List<CaseDO> queryByPageAndType(int page, CaseEnum type);
+    List<CaseDO> queryByPageAndType(int page, int type);
 }
