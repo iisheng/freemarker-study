@@ -46,4 +46,9 @@ public interface CaseMapper {
      */
     List<CaseDO> queryByPageAndType(Map map);
 
+    /**
+     * 获取总记录数量
+     * @return
+     */
+    Integer getCount();
 }

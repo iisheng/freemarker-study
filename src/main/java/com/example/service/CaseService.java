@@ -19,5 +19,7 @@ public interface CaseService {
 
     List<CaseDO> queryByPage(int page);
 
+    Integer getCount();
+
     List<CaseDO> queryByPageAndType(int page, int type);
 }

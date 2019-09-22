@@ -1,6 +1,7 @@
 package com.example.controller.mis;
 
 import com.example.entity.CaseDO;
+import com.example.entity.PageUtil;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -58,13 +59,15 @@ public class MisCaseController {
 
     /**
      * 案例列表
-     *
-     * @param type
      */
     @GetMapping("/cases")
-    public List<CaseDO> queryByPage(@RequestParam(defaultValue = "0") int page,
-                                    @RequestParam(defaultValue = "0") int type) {
-        return caseService.queryByPageAndType(page, type);
+    public PageUtil queryByPage(@RequestParam(defaultValue = "0") int page) {
+        PageUtil pageUtil = PageUtil.builder()
+                .cursor(page)
+                .record(caseService.queryByPage(page))
+                .totalPage(caseService.getCount())
+                .build();
+        return pageUtil;
     }
 
 }

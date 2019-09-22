@@ -7,6 +7,10 @@
         SELECT * FROM t_case WHERE id = #{id}
     </select>
 
+    <select id="getCount" resultType="Integer">
+        SELECT COUNT(1) FROM t_case
+    </select>
+
     <select id="queryByCursor" resultType="com.example.entity.CaseDO">
         SELECT * FROM t_case LIMIT #{cursor}, #{size}
     </select>

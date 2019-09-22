@@ -51,6 +51,11 @@ public class CaseServiceImpl implements CaseService {
     }
 
     @Override
+    public Integer getCount() {
+        return caseMapper.getCount();
+    }
+
+    @Override
     public List<CaseDO> queryByPageAndType(int page, int type) {
         Map map = new HashMap<>(3);
         map.put("cursor", page * 10);
