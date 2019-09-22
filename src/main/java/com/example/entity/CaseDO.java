@@ -49,6 +49,14 @@ public class CaseDO {
      */
     private CaseEnum type;
     /**
+     * 颜色模式
+     */
+    private ColorEnum colorModel;
+    /**
+     * 封面图
+     */
+    private String coverImage;
+    /**
      * 图片
      */
     private String image;

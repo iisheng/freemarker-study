@@ -63,7 +63,7 @@ public class MisCaseController {
      */
     @GetMapping("/cases")
     public List<CaseDO> queryByPage(@RequestParam(defaultValue = "0") int page,
-                                    @RequestParam(required = false) int type) {
+                                    @RequestParam(defaultValue = "0") int type) {
         return caseService.queryByPageAndType(page, type);
     }
 

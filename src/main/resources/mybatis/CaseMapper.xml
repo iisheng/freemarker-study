@@ -18,14 +18,16 @@
     <update id="update" parameterType="com.example.entity.CaseDO">
         UPDATE t_case SET title= #{title}, description = #{description}, customer_name= #{customerName},
         service_content = #{serviceContent}, publish_time = #{publishTime}, create_time = #{createTime},
-        modify_time = #{modifyTime}, `type` = #{type}, image = #{image} WHERE id = #{id}
+        modify_time = #{modifyTime}, `type` = #{type}, image = #{image}, cover_image = #{coverImage},
+         color_model = #{colorModel} WHERE id = #{id}
     </update>
 
     <insert id="insert" parameterType="com.example.entity.CaseDO"
             keyProperty="id">
 		INSERT INTO t_case (title,description,customer_name,service_content,publish_time,
-		create_time,modify_time,`type`, image) VALUES (#{title}, #{description}, #{customerName},
-		#{serviceContent}, #{publishTime}, #{createTime}, #{modifyTime}, #{type}, #{image})
+		create_time,modify_time,`type`, image, color_model, cover_image) VALUES (#{title},
+		 #{description}, #{customerName}, #{serviceContent}, #{publishTime}, #{createTime},
+		  #{modifyTime}, #{type}, #{image}, #{colorModel}, #{coverImage})
 
 	</insert>
 
