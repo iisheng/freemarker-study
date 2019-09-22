@@ -24,7 +24,7 @@
     <insert id="insert" parameterType="com.example.entity.CaseDO"
             keyProperty="id">
 		INSERT INTO t_case (title,description,customer_name,service_content,publish_time,
-		create_time,modify_time,`type`) VALUES (#{title}, #{description}, #{customerName},
+		create_time,modify_time,`type`, image) VALUES (#{title}, #{description}, #{customerName},
 		#{serviceContent}, #{publishTime}, #{createTime}, #{modifyTime}, #{type}, #{image})
 
 	</insert>

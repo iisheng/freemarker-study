@@ -50,7 +50,7 @@ public class CaseController {
             CaseModel caseModel = CaseModel.builder()
                     .title(caseDO.getTitle())
                     .serviceContent(caseDO.getServiceContent())
-                    .image(caseDO.getImage())
+                    .image(caseDO.getImage().split(",")[0])
                     .customerName(caseDO.getCustomerName())
                     .type("imgItem fl0" + caseDO.getType().getCode())
                     .build();
