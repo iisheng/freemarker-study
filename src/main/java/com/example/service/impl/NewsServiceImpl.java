@@ -26,12 +26,22 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public NewsDO update(Long id, NewsDO newsDO) {
-        int update = newsMapper.update(id, newsDO);
+    public NewsDO update(NewsDO newsDO) {
+        int update = newsMapper.update(newsDO);
         if (update > 0) {
-            return getById(id);
+            return getById(newsDO.getId());
         }
         throw new RuntimeException("更新失败");
+    }
+
+    @Override
+    public void create(NewsDO newsDO) {
+        newsMapper.insert(newsDO);
+    }
+
+    @Override
+    public Integer getCount() {
+        return newsMapper.getCount();
     }
 
     @Override

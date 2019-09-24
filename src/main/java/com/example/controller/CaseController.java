@@ -48,9 +48,10 @@ public class CaseController {
         List<CaseModel> result = new ArrayList<>();
         list.forEach(caseDO -> {
             CaseModel caseModel = CaseModel.builder()
+                    .id(caseDO.getId())
                     .title(caseDO.getTitle())
                     .serviceContent(caseDO.getServiceContent())
-                    .image(caseDO.getImage().split(",")[0])
+                    .image(caseDO.getCoverImage())
                     .customerName(caseDO.getCustomerName())
                     .type("imgItem fl0" + caseDO.getType().getCode())
                     .build();

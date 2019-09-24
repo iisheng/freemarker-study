@@ -33,6 +33,10 @@ public class NewsDO {
      */
     private String content;
     /**
+     *
+     */
+    private NewsEnum type;
+    /**
      * 发布时间
      */
     private Date publishTime;

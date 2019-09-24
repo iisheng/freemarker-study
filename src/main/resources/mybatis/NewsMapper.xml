@@ -7,7 +7,25 @@
         select * from t_news where id = #{id}
     </select>
 
-    <select id="queryByCursor" parameterType="map" resultType="com.example.entity.NewsDO">
-        select * from t_news limit #{cursor}, #{size}
+    <select id="queryByCursor" resultType="com.example.entity.NewsDO">
+        SELECT * FROM t_news LIMIT #{cursor}, #{size}
     </select>
+
+    <select id="getCount" resultType="Integer">
+        SELECT COUNT(1) FROM t_news
+    </select>
+
+    <update id="update" parameterType="com.example.entity.NewsDO">
+        UPDATE t_news SET title= #{title}, cover_img_url = #{coverImgUrl}, `type`= #{type},
+        summary = #{summary}, publish_time = #{publishTime}, create_time = #{createTime},
+        modify_time = #{modifyTime}, content = #{content} WHERE id = #{id}
+    </update>
+
+    <insert id="insert" parameterType="com.example.entity.NewsDO"
+            keyProperty="id">
+		INSERT INTO t_news (title,cover_img_url,`type`,summary,publish_time, create_time,modify_time,
+		content) VALUES (#{title}, #{coverImgUrl}, #{type}, #{summary}, #{publishTime}, #{createTime},
+		#{modifyTime}, #{content})
+
+	</insert>
 </mapper>

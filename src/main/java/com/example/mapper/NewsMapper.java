@@ -10,6 +10,12 @@ import java.util.Map;
  * @date 2019/08/21 11:18:45
  */
 public interface NewsMapper {
+    /**
+     * 插入
+     *
+     * @param newsDO
+     */
+    void insert(NewsDO newsDO);
 
     /**
      * 根据主键id获取用户信息
@@ -22,17 +28,23 @@ public interface NewsMapper {
     /**
      * 更新
      *
-     * @param id
      * @param newsDO
      * @return
      */
-    int update(Long id, NewsDO newsDO);
+    int update(NewsDO newsDO);
 
     /**
      * 查询列表
      *
-     * @param  map 包含 cursor 和 size
+     * @param map 包含 cursor 和 size
      * @return
      */
     List<NewsDO> queryByCursor(Map map);
+
+    /**
+     * 获取总记录数量
+     *
+     * @return
+     */
+    Integer getCount();
 }

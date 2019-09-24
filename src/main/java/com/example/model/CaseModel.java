@@ -11,6 +11,10 @@ import lombok.Data;
 @Builder
 public class CaseModel {
     /**
+     * 自增id
+     */
+    private Long id;
+    /**
      * 标题
      */
     private String title;

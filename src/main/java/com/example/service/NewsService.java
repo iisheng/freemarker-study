@@ -11,7 +11,11 @@ import java.util.List;
 public interface NewsService {
     NewsDO getById(Long id);
 
-    NewsDO update(Long id, NewsDO newsDO);
+    NewsDO update(NewsDO newsDO);
+
+    void create(NewsDO newsDO);
+
+    Integer getCount();
 
     List<NewsDO> queryByPage(int page);
 }

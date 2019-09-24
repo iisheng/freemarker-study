@@ -92,7 +92,7 @@
 
         <#list list as model>
             <li class="${model.type}">
-                <a href="#">
+                <a href="/case/${model.id}.html">
                     <img src="${model.image}"/>
                     <div class="shadow">
                         <p class="itemTitle">${model.title}</p>
@@ -107,23 +107,6 @@
                 </a>
             </li>
         </#list>
-
-
-        <li class="imgItem fl01">
-            <a href="#">
-                <img src="http://cdn1.hzvis.com/upfile/image/2019/07/1562729435_6812.jpg"/>
-                <div class="shadow">
-                    <p class="itemTitle">木木屋集团</p>
-                    <p class="itemInfo">
-                        -
-                        <br/>
-                        <span class="sy1">香飘飘线上礼盒包装设计</span>
-                        <br>
-                        品牌包装设计、礼盒设计
-                    </p>
-                </div>
-            </a>
-        </li>
 
     </ul>
 </div>

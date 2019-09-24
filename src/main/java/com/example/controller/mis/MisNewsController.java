@@ -1,11 +1,10 @@
 package com.example.controller.mis;
 
 import com.example.entity.NewsDO;
+import com.example.entity.PageUtil;
 import com.example.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 /**
  * @author iisheng
@@ -37,15 +36,31 @@ public class MisNewsController {
      */
     @PutMapping("/news/{id}")
     public NewsDO update(@PathVariable Long id, @RequestBody NewsDO param) {
-        NewsDO newsDO = newsService.update(id, param);
+        param.setId(id);
+        NewsDO newsDO = newsService.update(param);
         return newsDO;
+    }
+
+    /**
+     * 创建新闻
+     *
+     * @return
+     */
+    @PostMapping("/news")
+    public void update(@RequestBody NewsDO param) {
+        newsService.create(param);
     }
 
     /**
      * 新闻列表
      */
     @GetMapping("/newses")
-    public List<NewsDO> queryByPage(@RequestParam(defaultValue = "0") int page) {
-        return newsService.queryByPage(page);
+    public PageUtil queryByPage(@RequestParam(defaultValue = "0") int page) {
+        PageUtil pageUtil = PageUtil.builder()
+                .cursor(page)
+                .record(newsService.queryByPage(page))
+                .totalPage(newsService.getCount())
+                .build();
+        return pageUtil;
     }
 }
