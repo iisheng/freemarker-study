@@ -38,7 +38,7 @@
         <ul class="nav">
             <li><a href="/home.html"> 首页 </a></li>
             <li><a href="/about.html"> 关于我们 </a></li>
-            <li><a href="/newses.html"> 原创观点 </a></li>
+            <li><a href="/news1.html"> 原创观点 </a></li>
             <li><a href="/contact.html"> 联系 </a></li>
         </ul>
         <p class="close">

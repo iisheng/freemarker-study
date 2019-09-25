@@ -43,10 +43,15 @@ public class NewsController {
      * @param model
      * @return
      */
-    @GetMapping("/newses.html")
-    public String newsList(@RequestParam(defaultValue = "0") int page, Model model) {
-        List<NewsDO> list = newsService.queryByPage(page);
+    @GetMapping("/news{type}.html")
+    public String newsList(@RequestParam(defaultValue = "0") int page,
+                           @PathVariable Integer type, Model model) {
+        System.out.println(type);
+        List<NewsDO> list = newsService.queryByPageAndType(page, type);
         model.addAttribute("list", list);
-        return "newses";
+        if (type != null && type == 2) {
+            return "news2";
+        }
+        return "news1";
     }
 }

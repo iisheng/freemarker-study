@@ -55,4 +55,6 @@ public interface NewsMapper {
      * @return
      */
     Integer getCount();
+
+    List<NewsDO> queryByPageAndType(Map map);
 }

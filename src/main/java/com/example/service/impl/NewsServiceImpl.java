@@ -45,6 +45,18 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
+    public List<NewsDO> queryByPageAndType(int page, int type) {
+        Map map = new HashMap<>(3);
+        map.put("cursor", page * 10);
+        map.put("size", 10);
+        if (type != 0) {
+            map.put("type", type);
+            return newsMapper.queryByPageAndType(map);
+        }
+        return newsMapper.queryByCursor(map);
+    }
+
+    @Override
     public List<NewsDO> queryByPage(int page) {
         Map map = new HashMap<>();
         map.put("cursor", page * 10);

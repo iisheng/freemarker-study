@@ -36,7 +36,7 @@
         <ul class="nav">
             <li><a href="/home.html"> 首页 </a></li>
             <li><a href="/about.html"> 关于我们 </a></li>
-            <li><a href="/newses.html"> 原创观点 </a></li>
+            <li><a href="/news1.html"> 原创观点 </a></li>
             <li><a href="/contact.html"> 联系 </a></li>
         </ul>
         <p class="close">
@@ -47,48 +47,28 @@
 <div class="container">
     <div class="news_nav clearfix">
         <p>NEWS</p>
-        <P><span> 六合最新动态 </span> <span class="line">|</span> <span>六合原创观点</span></P>
+        <P><span> <a href="/news1.html">六合最新动态</a> </span><span class="line">|</span><span> <a
+                        href="/news2.html">六合原创观点</a></span></P>
     </div>
     <ul class="article">
-        <li class="article_item">
-            <a class="clearfix">
-                <div class="article_left">
-                    <img src="http://cdn1.hzvis.com/upfile/image/2018/09/1535943534_4733.jpg"/>
-                </div>
-                <div class="article_right">
-                    <p class="time">2018-09-03</p>
-                    <p class="title">产品竞争壁垒下的格局重塑——蓝小熊品牌策划设计全复盘</p>
-                    <p class="abstract">本次我们将浅谈以下4个问号进行复盘梳理，以蓝小熊个案为轴心向外衍射思考，希望能给您一点建设性的启发...</p>
-                    <p class="read">Read the article</p>
-                </div>
-            </a>
-        </li>
-        <li class="article_item">
-            <a class="clearfix">
-                <div class="article_left">
-                    <img src="http://cdn1.hzvis.com/upfile/image/2018/09/1535943534_4733.jpg"/>
-                </div>
-                <div class="article_right">
-                    <p class="time">2018-09-03</p>
-                    <p class="title">产品竞争壁垒下的格局重塑——蓝小熊品牌策划设计全复盘</p>
-                    <p class="abstract">本次我们将浅谈以下4个问号进行复盘梳理，以蓝小熊个案为轴心向外衍射思考，希望能给您一点建设性的启发...</p>
-                    <p class="read">Read the article</p>
-                </div>
-            </a>
-        </li>
-        <li class="article_item">
-            <a class="clearfix">
-                <div class="article_left">
-                    <img src="http://cdn1.hzvis.com/upfile/image/2018/09/1535943534_4733.jpg"/>
-                </div>
-                <div class="article_right">
-                    <p class="time">2018-09-03</p>
-                    <p class="title">产品竞争壁垒下的格局重塑——蓝小熊品牌策划设计全复盘</p>
-                    <p class="abstract">本次我们将浅谈以下4个问号进行复盘梳理，以蓝小熊个案为轴心向外衍射思考，希望能给您一点建设性的启发...</p>
-                    <p class="read">Read the article</p>
-                </div>
-            </a>
-        </li>
+
+        <#list list as model>
+            <li class="article_item">
+                <a class="clearfix">
+                    <div class="article_left">
+                        <img src="http://cdn1.hzvis.com/upfile/image/2018/09/1535943534_4733.jpg"/>
+                    </div>
+                    <div class="article_right">
+                        <p class="time">${model.publishTime?string("yyyy-MM-dd")}</p>
+                        <p class="title">${model.title}</p>
+                        <p class="abstract">${model.summary}</p>
+                        <p class="read">Read the article</p>
+                    </div>
+                </a>
+            </li>
+
+        </#list>
+
     </ul>
 </div>
 <div class="footer">
