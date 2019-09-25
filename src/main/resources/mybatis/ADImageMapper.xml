@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ADImageMapper">
+
+    <select id="queryByPageAndType" resultType="com.example.entity.ADImage">
+        SELECT * FROM t_ad_image WHERE `type` = #{type} limit #{cursor}, #{size}
+    </select>
+
+    <select id="getCountByType" resultType="Integer">
+        SELECT COUNT(1) FROM t_ad_image WHERE `type` = ${type}
+    </select>
+
+    <insert id="insert" parameterType="com.example.entity.ADImage"
+            keyProperty="id">
+		INSERT INTO t_ad_image (img_url,`type`) VALUES (#{imgUrl},#{type})
+	</insert>
+
+</mapper>
