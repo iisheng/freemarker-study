@@ -58,6 +58,17 @@ public class MisCaseController {
     }
 
     /**
+     * 删除案例
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/case/{id}")
+    public void delete(@PathVariable Long id) {
+        caseService.delete(id);
+    }
+
+    /**
      * 案例列表
      */
     @GetMapping("/cases")

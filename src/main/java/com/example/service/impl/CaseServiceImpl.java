@@ -66,4 +66,9 @@ public class CaseServiceImpl implements CaseService {
         }
         return caseMapper.queryByCursor(map);
     }
+
+    @Override
+    public void delete(Long id) {
+        caseMapper.delete(id);
+    }
 }

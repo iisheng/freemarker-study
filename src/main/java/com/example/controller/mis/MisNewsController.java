@@ -42,6 +42,17 @@ public class MisNewsController {
     }
 
     /**
+     * 删除新闻
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/news/{id}")
+    public void delete(@PathVariable Long id) {
+        newsService.delete(id);
+    }
+
+    /**
      * 创建新闻
      *
      * @return
@@ -54,7 +65,7 @@ public class MisNewsController {
     /**
      * 新闻列表
      */
-    @GetMapping("/newses")
+    @GetMapping("/news")
     public PageUtil queryByPage(@RequestParam(defaultValue = "0") int page) {
         PageUtil pageUtil = PageUtil.builder()
                 .cursor(page)

@@ -22,4 +22,6 @@ public interface CaseService {
     Integer getCount();
 
     List<CaseDO> queryByPageAndType(int page, int type);
+
+    void delete(Long id);
 }

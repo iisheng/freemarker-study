@@ -51,4 +51,9 @@ public class NewsServiceImpl implements NewsService {
         map.put("size", 10);
         return newsMapper.queryByCursor(map);
     }
+
+    @Override
+    public void delete(Long id) {
+        newsMapper.delete(id);
+    }
 }

@@ -10,6 +10,14 @@ import java.util.Map;
  * @date 2019/08/21 11:18:45
  */
 public interface NewsMapper {
+
+    /**
+     * 删除
+     *
+     * @param id
+     */
+    void delete(Long id);
+
     /**
      * 插入
      *

@@ -7,12 +7,16 @@
         SELECT * FROM t_case WHERE id = #{id}
     </select>
 
+    <delete id="delete">
+        DELETE FROM t_case WHERE id = #{id}
+    </delete>
+
     <select id="getCount" resultType="Integer">
         SELECT COUNT(1) FROM t_case
     </select>
 
     <select id="queryByCursor" resultType="com.example.entity.CaseDO">
-        SELECT * FROM t_case LIMIT #{cursor}, #{size}
+        SELECT * FROM t_case ORDER BY id DESC LIMIT #{cursor}, #{size}
     </select>
 
     <select id="queryByPageAndType" resultType="com.example.entity.CaseDO">

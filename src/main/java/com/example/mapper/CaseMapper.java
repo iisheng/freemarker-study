@@ -11,7 +11,19 @@ import java.util.Map;
  */
 public interface CaseMapper {
 
+    /**
+     * 插入
+     *
+     * @param caseDO
+     */
     void insert(CaseDO caseDO);
+
+    /**
+     * 删除
+     *
+     * @param id
+     */
+    void delete(Long id);
 
     /**
      * 根据主键id获取用户信息
@@ -48,6 +60,7 @@ public interface CaseMapper {
 
     /**
      * 获取总记录数量
+     *
      * @return
      */
     Integer getCount();

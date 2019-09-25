@@ -18,4 +18,6 @@ public interface NewsService {
     Integer getCount();
 
     List<NewsDO> queryByPage(int page);
+
+    void delete(Long id);
 }
