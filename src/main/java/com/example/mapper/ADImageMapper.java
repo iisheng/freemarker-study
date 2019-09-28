@@ -29,4 +29,6 @@ public interface ADImageMapper {
     Integer getCountByType(Map type);
 
     List<ADImage> queryAll();
+
+    void delete(Long id);
 }

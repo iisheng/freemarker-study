@@ -8,6 +8,11 @@
         SELECT * FROM t_ad_image WHERE `type` = #{type} limit #{cursor}, #{size}
     </select>
 
+
+    <delete id="delete">
+        DELETE FROM t_ad_image WHERE id = #{id}
+    </delete>
+
     <select id="queryAll" resultType="com.example.entity.ADImage">
         SELECT * FROM t_ad_image ORDER BY id DESC
     </select>

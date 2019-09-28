@@ -17,6 +17,17 @@ public class MisADImageController {
     private ADImageService adImageService;
 
     /**
+     * 删除
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/adImage/{id}")
+    public void delete(@PathVariable Long id) {
+        adImageService.delete(id);
+    }
+
+    /**
      * 创建案例
      *
      * @return

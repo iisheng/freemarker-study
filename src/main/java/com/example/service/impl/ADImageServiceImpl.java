@@ -45,4 +45,9 @@ public class ADImageServiceImpl implements ADImageService {
     public List<ADImage> queryAll() {
         return adImageMapper.queryAll();
     }
+
+    @Override
+    public void delete(Long id) {
+        adImageMapper.delete(id);
+    }
 }

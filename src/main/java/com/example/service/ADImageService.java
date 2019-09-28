@@ -17,4 +17,6 @@ public interface ADImageService {
     int getCountByType(int type);
 
     List<ADImage> queryAll();
+
+    void delete(Long id);
 }
