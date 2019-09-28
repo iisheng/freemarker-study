@@ -27,4 +27,6 @@ public interface ADImageMapper {
     List<ADImage> queryByPageAndType(Map map);
 
     Integer getCountByType(Map type);
+
+    List<ADImage> queryAll();
 }

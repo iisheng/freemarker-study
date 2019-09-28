@@ -8,6 +8,10 @@
         SELECT * FROM t_ad_image WHERE `type` = #{type} limit #{cursor}, #{size}
     </select>
 
+    <select id="queryAll" resultType="com.example.entity.ADImage">
+        SELECT * FROM t_ad_image ORDER BY id DESC
+    </select>
+
     <select id="getCountByType" resultType="Integer">
         SELECT COUNT(1) FROM t_ad_image WHERE `type` = ${type}
     </select>

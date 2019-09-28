@@ -15,4 +15,6 @@ public interface ADImageService {
     List<ADImage> queryByPageAndType(int page, int type);
 
     int getCountByType(int type);
+
+    List<ADImage> queryAll();
 }

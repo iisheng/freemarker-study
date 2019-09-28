@@ -1,7 +1,10 @@
 package com.example.controller;
 
+import com.example.entity.ADImage;
 import com.example.entity.CaseDO;
 import com.example.model.CaseModel;
+import com.example.model.HomeModel;
+import com.example.service.ADImageService;
 import com.example.service.CaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +24,9 @@ public class CaseController {
 
     @Autowired
     private CaseService caseService;
+
+    @Autowired
+    private ADImageService adImageService;
 
     /**
      * 获取案例 model
@@ -47,7 +53,21 @@ public class CaseController {
     @GetMapping("/home.html")
     public String home(@RequestParam(defaultValue = "0") int page, Model model) {
         List<CaseDO> list = caseService.queryByPage(page);
-        List<CaseModel> result = new ArrayList<>();
+        List<CaseModel> caseModels = new ArrayList<>();
+        List<String> bannerImages = new ArrayList<>();
+        List<String> merchantImages = new ArrayList<>();
+
+        List<ADImage> adImages = adImageService.queryAll();
+
+        adImages.forEach(adImage -> {
+            if (adImage.getType() == 1) {
+                bannerImages.add(adImage.getImgUrl());
+            }
+            if (adImage.getType() == 2) {
+                merchantImages.add(adImage.getImgUrl());
+            }
+        });
+
         list.forEach(caseDO -> {
             CaseModel caseModel = CaseModel.builder()
                     .id(caseDO.getId())
@@ -57,9 +77,16 @@ public class CaseController {
                     .customerName(caseDO.getCustomerName())
                     .type("imgItem fl0" + caseDO.getType().getCode())
                     .build();
-            result.add(caseModel);
+            caseModels.add(caseModel);
         });
-        model.addAttribute("list", result);
+
+        HomeModel homeModel = HomeModel.builder()
+                .caseModels(caseModels)
+                .bannerImages(bannerImages)
+                .merchantImages(merchantImages)
+                .build();
+
+        model.addAttribute("homeModel", homeModel);
         return "cases";
     }
 

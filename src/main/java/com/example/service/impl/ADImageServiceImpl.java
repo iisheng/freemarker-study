@@ -40,4 +40,9 @@ public class ADImageServiceImpl implements ADImageService {
         map.put("type", type);
         return adImageMapper.getCountByType(map);
     }
+
+    @Override
+    public List<ADImage> queryAll() {
+        return adImageMapper.queryAll();
+    }
 }

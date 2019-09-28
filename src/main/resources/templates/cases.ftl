@@ -48,15 +48,13 @@
 </div>
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <a href="#"> <img src="http://cdn1.hzvis.com/upfile/image/2018/08/1534253042_4636.jpg"/> </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="#"> <img src="http://cdn1.hzvis.com/upfile/image/2018/07/1531995511_5042.jpg"/> </a>
-        </div>
-        <div class="swiper-slide">
-            <a href="#"> <img src="http://cdn1.hzvis.com/upfile/2017/12/20171201174150_262.jpg"/> </a>
-        </div>
+
+        <#list homeModel.bannerImages as imgUrl>
+            <div class="swiper-slide">
+                <a href="#"> <img src="${imgUrl}"/> </a>
+            </div>
+        </#list>
+
     </div>
     <div class="swiper-pagination"></div><!--分页器。如果放置在swiper-container外面，需要自定义样式。-->
     <div class="swiper-button-prev">
@@ -90,7 +88,7 @@
 <div class="imgListWrap">
     <ul class="ul01 clearfix">
 
-        <#list list as model>
+        <#list homeModel.caseModels as model>
             <li class="${model.type}">
                 <a href="/case/${model.id}.html">
                     <img src="${model.image}"/>
@@ -117,14 +115,11 @@
 </div>
 <div style="margin:0 auto;display:flex;justify-content: center;position: relative;">
     <ul class="sponsor_wrap clearfix">
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="http://cdn1.hzvis.com/static/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
-        <li><img src="/img/logo.png"/></li>
+
+        <#list homeModel.merchantImages as imgUrl>
+            <li><img src="${imgUrl}"/></li>
+        </#list>
+
     </ul>
 </div>
 <div class="together">
