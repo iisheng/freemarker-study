@@ -2,6 +2,8 @@ package com.example.controller;
 
 import com.example.entity.ADImage;
 import com.example.entity.CaseDO;
+import com.example.entity.ColorEnum;
+import com.example.model.CaseDetailModel;
 import com.example.model.CaseModel;
 import com.example.model.HomeModel;
 import com.example.service.ADImageService;
@@ -38,7 +40,18 @@ public class CaseController {
     public String getById(@PathVariable Long id, Model model) {
         CaseDO caseDO = caseService.getById(id);
         caseDO.setDescription("<p>" + caseDO.getDescription().replace("\n", "</p><p>") + "</p>");
-        model.addAttribute("caseModel", caseDO);
+        CaseDetailModel caseDetailModel = CaseDetailModel.builder()
+                .title(caseDO.getTitle())
+                .serviceContent(caseDO.getServiceContent())
+                .customerName(caseDO.getCustomerName())
+                .description(caseDO.getDescription())
+                .colorModel(caseDO.getColorModel() == ColorEnum.GRAY_WHITE ? "mod01" : "mod02")
+                .publishTime(caseDO.getPublishTime())
+                .image(caseDO.getImage())
+                .leftId(caseService.getLeftById(id) == null ? id : caseService.getLeftById(id).getId())
+                .rightId(caseService.getRightById(id) == null ? id : caseService.getRightById(id).getId())
+                .build();
+        model.addAttribute("caseModel", caseDetailModel);
         return "case";
     }
 

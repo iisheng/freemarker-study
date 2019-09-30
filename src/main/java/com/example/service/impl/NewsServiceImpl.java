@@ -40,6 +40,16 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
+    public NewsDO getRightById(Long id) {
+        return newsMapper.selectRightById(id);
+    }
+
+    @Override
+    public NewsDO getLeftById(Long id) {
+        return newsMapper.selectLeftById(id);
+    }
+
+    @Override
     public Integer getCount() {
         return newsMapper.getCount();
     }

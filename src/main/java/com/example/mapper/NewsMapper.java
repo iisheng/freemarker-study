@@ -40,6 +40,20 @@ public interface NewsMapper {
      * @return
      */
     int update(NewsDO newsDO);
+    /**
+     * 根据主键id获取用户信息
+     *
+     * @param id
+     * @return
+     */
+    NewsDO selectLeftById(long id);
+    /**
+     * 根据主键id获取用户信息
+     *
+     * @param id
+     * @return
+     */
+    NewsDO selectRightById(long id);
 
     /**
      * 查询列表

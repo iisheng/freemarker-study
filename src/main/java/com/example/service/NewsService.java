@@ -15,6 +15,10 @@ public interface NewsService {
 
     void create(NewsDO newsDO);
 
+    NewsDO getRightById(Long id);
+
+    NewsDO getLeftById(Long id);
+
     Integer getCount();
 
     List<NewsDO> queryByPageAndType(int page, int type);

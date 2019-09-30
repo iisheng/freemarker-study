@@ -32,6 +32,20 @@ public interface CaseMapper {
      * @return
      */
     CaseDO selectById(long id);
+    /**
+     * 根据主键id获取用户信息
+     *
+     * @param id
+     * @return
+     */
+    CaseDO selectLeftById(long id);
+    /**
+     * 根据主键id获取用户信息
+     *
+     * @param id
+     * @return
+     */
+    CaseDO selectRightById(long id);
 
     /**
      * 更新

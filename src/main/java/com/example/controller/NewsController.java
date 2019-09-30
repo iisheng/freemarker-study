@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.NewsDO;
+import com.example.model.NewsDetailModel;
 import com.example.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,16 @@ public class NewsController {
     @GetMapping("/news/{id}.html")
     public String getById(@PathVariable Long id, Model model) {
         NewsDO newsDO = newsService.getById(id);
-        model.addAttribute("newsModel", newsDO);
+        NewsDetailModel newsDetailModel = NewsDetailModel.builder()
+                .content(newsDO.getContent())
+                .id(newsDO.getId())
+                .publishTime(newsDO.getPublishTime())
+                .summary(newsDO.getSummary())
+                .title(newsDO.getTitle())
+                .leftId(newsService.getLeftById(id) == null ? id : newsService.getLeftById(id).getId())
+                .rightId(newsService.getRightById(id) == null ? id : newsService.getRightById(id).getId())
+                .build();
+        model.addAttribute("newsModel", newsDetailModel);
         return "news";
     }
 

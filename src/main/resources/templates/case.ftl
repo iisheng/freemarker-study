@@ -9,9 +9,9 @@
     <title>${caseModel.title}</title>
     <link rel="stylesheet" href="/css/resize.css">
     <link rel="stylesheet" href="/js/css/layui.css">
-    <link rel="stylesheet" href="/css/media.css">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/case.css">
+    <link rel="stylesheet" href="/css/media.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1379887_qtmt02gd0bc.css">
     <style>
         @font-face {
@@ -36,8 +36,8 @@
 <!-- 分享start -->
 <div class="share_warp">
     <p id="closePage"><i class="layui-icon layui-icon-close"></i></p>
-    <p><a href="#"> <i class="layui-icon layui-icon-right"></i> </a></p>
-    <p><a> <i class="layui-icon layui-icon-left"></i> </a></p>
+    <p><a href="/case/${caseModel.rightId}.html"> <i class="layui-icon layui-icon-right"></i> </a></p>
+    <p><a href="/case/${caseModel.leftId}.html"> <i class="layui-icon layui-icon-left"></i> </a></p>
     <p id="share"><i class="layui-icon layui-icon-share"></i></p>
 </div>
 <!-- 分享end -->
@@ -60,7 +60,7 @@
 </div>
 <div class="intro clearfix mod01 mod02">
     <div class="intro_left">
-        鲸域服务式办公品牌全案设计
+        ${caseModel.title}
     </div>
     <div class="intro_right">
         <div class="intro_right_top">

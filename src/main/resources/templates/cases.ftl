@@ -90,7 +90,7 @@
 
         <#list homeModel.caseModels as model>
             <li class="${model.type}">
-                <a href="/case/${model.id}.html">
+                <a href="/case/${model.id}.html" target="_blank">
                     <img src="${model.image}"/>
                     <div class="shadow">
                         <p class="itemTitle">${model.title}</p>

@@ -7,6 +7,14 @@
         SELECT * FROM t_news WHERE id = #{id}
     </select>
 
+    <select id="selectLeftById" resultType="com.example.entity.NewsDO">
+        SELECT * FROM t_news WHERE id &lt; #{id} ORDER BY id DESC  LIMIT 1
+    </select>
+
+    <select id="selectRightById" resultType="com.example.entity.NewsDO">
+        SELECT * FROM t_news WHERE id &gt; #{id} LIMIT 1
+    </select>
+
     <delete id="delete">
         DELETE FROM t_news WHERE id = #{id}
     </delete>

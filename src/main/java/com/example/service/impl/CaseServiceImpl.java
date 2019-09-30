@@ -31,6 +31,16 @@ public class CaseServiceImpl implements CaseService {
     }
 
     @Override
+    public CaseDO getRightById(Long id) {
+        return caseMapper.selectRightById(id);
+    }
+
+    @Override
+    public CaseDO getLeftById(Long id) {
+        return caseMapper.selectLeftById(id);
+    }
+
+    @Override
     public CaseDO update(CaseDO caseDO) {
         if (caseDO.getId() == 0) {
             throw new RuntimeException("id不能为空");

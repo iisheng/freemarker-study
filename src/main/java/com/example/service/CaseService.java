@@ -15,6 +15,10 @@ public interface CaseService {
 
     CaseDO getById(Long id);
 
+    CaseDO getRightById(Long id);
+
+    CaseDO getLeftById(Long id);
+
     CaseDO update(CaseDO caseDO);
 
     List<CaseDO> queryByPage(int page);

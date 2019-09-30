@@ -37,8 +37,8 @@
 <!-- 分享start -->
 <div class="share_warp">
     <p id="closePage"><i class="layui-icon layui-icon-close"></i></p>
-    <p><a href="#"> <i class="layui-icon layui-icon-right"></i> </a></p>
-    <p><a> <i class="layui-icon layui-icon-left"></i> </a></p>
+    <p><a href="/news/${newsModel.rightId}.html"> <i class="layui-icon layui-icon-right"></i> </a></p>
+    <p><a href="/news/${newsModel.leftId}.html"> <i class="layui-icon layui-icon-left"></i> </a></p>
     <p id="share"><i class="layui-icon layui-icon-share"></i></p>
 </div>
 <!-- 分享end -->
