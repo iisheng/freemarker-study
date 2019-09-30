@@ -38,7 +38,6 @@ public class CaseController {
     public String getById(@PathVariable Long id, Model model) {
         CaseDO caseDO = caseService.getById(id);
         caseDO.setDescription("<p>" + caseDO.getDescription().replace("\n", "</p><p>") + "</p>");
-        System.out.println(caseDO.getDescription());
         model.addAttribute("caseModel", caseDO);
         return "case";
     }

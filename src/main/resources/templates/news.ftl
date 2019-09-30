@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description"
           content="六合创意设计公司是一家致力于为注重企业形象和品牌气质的高要求客户提供整体形象创建与改造升级设计服务,由业内知名总监合力智建,靠专业和口碑吸引众多客户,六合创意的客户遍布全球,跨越各大行业.">
-    <title>新闻资讯</title>
+    <title>${newsModel.title}</title>
     <link rel="stylesheet" href="/js/css/layui.css">
     <link rel="stylesheet" href="/css/resize.css">
     <link rel="stylesheet" href="/css/common.css">
