@@ -46,7 +46,6 @@ public class NewsController {
     @GetMapping("/news{type}.html")
     public String newsList(@RequestParam(defaultValue = "0") int page,
                            @PathVariable Integer type, Model model) {
-        System.out.println(type);
         List<NewsDO> list = newsService.queryByPageAndType(page, type);
         model.addAttribute("list", list);
         if (type != null && type == 2) {

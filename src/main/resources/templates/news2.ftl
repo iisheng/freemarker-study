@@ -27,6 +27,11 @@
     </style>
 </head>
 <body>
+<script>
+    function newsDetail(id) {
+        window.open("/news/" + id + ".html");
+    }
+</script>
 <div class="header_wrap">
     <div class="header">
         <p><a href="#"> <img src="/img/logo.png"/> </a></p>
@@ -62,7 +67,7 @@
                         <p class="time">${model.publishTime?string("yyyy-MM-dd")}</p>
                         <p class="title">${model.title}</p>
                         <p class="abstract">${model.summary}</p>
-                        <p class="read">Read the article</p>
+                        <p class="read" onclick="newsDetail(${model.id})">Read the article</p>
                     </div>
                 </a>
             </li>
