@@ -31,6 +31,9 @@
 
 
 @media screen and (max-width:750px){
+    .share_wrap{
+        display: none;
+    }
     .article{
         width: 94%;
         margin:90px auto 50px;

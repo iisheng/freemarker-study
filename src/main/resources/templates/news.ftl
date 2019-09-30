@@ -64,7 +64,7 @@
 <div class="article clearfix">
     <div class="left">
         <p class="time">${newsModel.publishTime?string("yyyy-MM-dd")}</p>
-        <p>${newsModel.summary}</p>
+        <p>${newsModel.type}</p>
     </div>
     <div class="right">
         <p class="title">${newsModel.title}</p>

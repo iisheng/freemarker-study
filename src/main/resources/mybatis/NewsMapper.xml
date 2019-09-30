@@ -24,7 +24,7 @@
     </select>
 
     <select id="queryByPageAndType" resultType="com.example.entity.NewsDO">
-        SELECT * FROM t_news WHERE `type` = #{type} limit #{cursor}, #{size}
+        SELECT * FROM t_news WHERE `type` = #{type} ORDER BY id DESC limit #{cursor}, #{size}
     </select>
 
     <select id="getCount" resultType="Integer">

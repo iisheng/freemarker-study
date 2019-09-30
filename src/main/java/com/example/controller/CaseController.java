@@ -40,6 +40,12 @@ public class CaseController {
     public String getById(@PathVariable Long id, Model model) {
         CaseDO caseDO = caseService.getById(id);
         caseDO.setDescription("<p>" + caseDO.getDescription().replace("\n", "</p><p>") + "</p>");
+        String color = "intro clearfix ";
+        if (caseDO.getColorModel() == ColorEnum.GRAY_WHITE) {
+            color += "mod01";
+        } else {
+            color += "mod02";
+        }
         CaseDetailModel caseDetailModel = CaseDetailModel.builder()
                 .title(caseDO.getTitle())
                 .serviceContent(caseDO.getServiceContent())
@@ -50,6 +56,7 @@ public class CaseController {
                 .image(caseDO.getImage())
                 .leftId(caseService.getLeftById(id) == null ? id : caseService.getLeftById(id).getId())
                 .rightId(caseService.getRightById(id) == null ? id : caseService.getRightById(id).getId())
+                .colorModel(color)
                 .build();
         model.addAttribute("caseModel", caseDetailModel);
         return "case";

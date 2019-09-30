@@ -21,6 +21,7 @@ public class NewsDetailModel {
      * 概要
      */
     private String summary;
+    private String type;
     /**
      * 内容
      */

@@ -58,7 +58,7 @@
         </p>
     </div>
 </div>
-<div class="intro clearfix mod01 mod02">
+<div class="${caseModel.colorModel}">
     <div class="intro_left">
         ${caseModel.title}
     </div>

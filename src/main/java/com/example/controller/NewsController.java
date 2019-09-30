@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.example.entity.NewsDO;
+import com.example.entity.NewsEnum;
 import com.example.model.NewsDetailModel;
 import com.example.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,7 @@ public class NewsController {
                 .title(newsDO.getTitle())
                 .leftId(newsService.getLeftById(id) == null ? id : newsService.getLeftById(id).getId())
                 .rightId(newsService.getRightById(id) == null ? id : newsService.getRightById(id).getId())
+                .type(newsDO.getType() == NewsEnum.LATEST ? "最新动态" : "原创观点")
                 .build();
         model.addAttribute("newsModel", newsDetailModel);
         return "news";
