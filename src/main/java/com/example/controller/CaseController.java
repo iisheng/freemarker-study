@@ -69,7 +69,7 @@ public class CaseController {
      * @param model
      * @return
      */
-    @GetMapping("/home.html")
+    @GetMapping("/")
     public String home(@RequestParam(defaultValue = "0") int page, Model model) {
         List<CaseDO> list = caseService.queryByPage(page);
         List<CaseModel> caseModels = new ArrayList<>();
