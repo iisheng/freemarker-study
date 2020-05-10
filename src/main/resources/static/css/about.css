@@ -1,12 +1,18 @@
+
+body{
+    font-family: Microsoft Yahei; 
+    color: #999;
+    font-size: 14px;
+}
 .content_wrap{
-    margin:100px auto 100px;
-    width: 70%;
+    margin:100px auto 0px;
+    width: 80%;
 }
 .left{
     float: left;
-    columns: #595757;
-    margin-left: 150px;
-    font-size: 27px;
+    color: #ccc;
+    font-size: 30px;
+    font-family: Microsoft Yahei;
 }
 .right{
     float: right;
@@ -16,7 +22,73 @@
     line-height: 2;
 }
 .title{
+    font-size: 24px;
     color: #db0445;
+}
+.who_content{
+    font-size: 14px;
+    margin-top: 18px;
+}
+.who_content_en{
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+.cricle{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.cricle li{
+    float: left;
+    text-align: center;
+    width: 33%;
+}
+.cricle_img{
+    width: 150px;
+}
+.psr{
+    position: relative;
+}
+.cricle_num{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate3d(-50%,-50%,0);
+    font-size: 18px;
+    color: #db0445;
+    font-weight: bold;
+}
+.cricle_text{
+    font-size: 14px;
+    margin-top: 6px;
+}
+.img_wrap{
+    width: 80%;
+    margin: 0 auto;
+}
+.ser01{
+    margin-top: 15px;
+    font-size: 18px;
+    color: #db0445;
+    letter-spacing:6px;
+    line-height: 1.5;
+}
+.ser02{
+    font-size: 14px;
+    text-transform:uppercase;
+    position: relative;
+    top:0px;
+    line-height: 1.5;
+}
+.ser03{
+    font-size: 14px;
+}
+.ser04{
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 30px;
+    margin-bottom: 50px;
 }
 .service01{
     margin-top: 50px;
@@ -47,5 +119,13 @@
 }
 
 
-
+@media screen and (max-width: 750px) {
+    .cricle li{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .img_wrap{
+        width: 100%;
+    }
+}
 

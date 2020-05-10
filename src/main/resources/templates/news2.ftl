@@ -88,7 +88,7 @@
         </div>
         <div class="aboutus">
             <p class="sp1"><a href="static/about.html">关于我们</a></p>
-            <p><a href="/news.html">最新动态</a></p>
+            <p><a href="/news2.html">最新动态</a></p>
         </div>
         <div class="contact">
             <p class="sp1"><a href="static/contact.html">联系我们</a></p>

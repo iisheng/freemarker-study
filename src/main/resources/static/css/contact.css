@@ -1,11 +1,15 @@
+body{
+    font-family: Microsoft Yahei; 
+}
 .contact_wrap{
-    width: 50%;
+    width: 80%;
     margin:100px auto 100px;
 }
 .left{
     float: left;
-    color: #595757;
+    color: #999;
     font-size: 30px;
+    font-family: Microsoft Yahei;
 }
 .right{
     float: right;
@@ -15,7 +19,24 @@
     line-height: 2;
 }
 .cooperation{
-    margin-top: 50px;
+    margin-top: 20px;
+    color: #999;
+}
+.process{
+    font-size: 28px;
+    color: #db0445;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.process_img img{
+    width: 100%;
+}
+.hand{
+    width: 80%;
+    margin: 0 auto;
+}
+.hand img{
+    width: 100%;
 }
 .site_and_phone{
     margin-top: 50px;
@@ -23,7 +44,9 @@
 .recrit{
     margin-top: 50px;
 }
-
+.mediaMT{
+    margin-top: 30px;
+}
 @media screen and (max-width:750px){
     .contact_wrap{
         width: 94%;
@@ -34,5 +57,14 @@
     }
     .right{
         width: 100%;
+    }
+    .hand{
+        width: 100%;
+    }
+    .mediaMB{
+        margin-bottom: 50px;
+    }
+    .mediaMT{
+        margin-top: 0;
     }
 }
