@@ -34,6 +34,7 @@ body{
     font-size: 14px;
     line-height: 1.5;
     margin-top: 20px;
+    text-align:justify;
 }
 .cricle{
     margin-top: 60px;
@@ -89,6 +90,7 @@ body{
     color: #ccc;
     margin-top: 30px;
     margin-bottom: 50px;
+    text-align:justify;
 }
 .service01{
     margin-top: 50px;
@@ -120,12 +122,46 @@ body{
 
 
 @media screen and (max-width: 750px) {
+    .cricle{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .title{
+        font-size: 18px;
+    }
     .cricle li{
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 45px;
     }
     .img_wrap{
         width: 100%;
+    }
+    .left{
+        margin-bottom: 0;
+    }
+    .who_content{
+        margin-top: 10;
+        line-height: 1.7;
+        text-align:justify;
+        font-size: 14px;
+    }
+    .who_content_en{
+        line-height: 1.5;
+        text-align:justify;
+    }
+    .ser01{
+        font-size: 14px;
+    }
+    .ser02{
+        margin-top: 5px;
+    }
+    .ser03{
+        line-height: 1.7;
+    }
+    .ser04{
+        text-align: justify;
+        line-height: 1.5;
+        margin-top: 15px;
     }
 }
 

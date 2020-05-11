@@ -21,6 +21,7 @@ body{
 .cooperation{
     margin-top: 20px;
     color: #999;
+    text-align: justify;
 }
 .process{
     font-size: 28px;
@@ -54,9 +55,21 @@ body{
     .left{
         float: none;
         margin-bottom: 15px;
+        font-size: 18px;
     }
     .right{
         width: 100%;
+        line-height: 1.5;
+        font-size: 14px;
+    }
+    .cooperation{
+        text-align: justify;
+    }
+    .process{
+        font-size: 18px;
+    }
+    .mtx{
+        margin-top: 5px;
     }
     .hand{
         width: 100%;
