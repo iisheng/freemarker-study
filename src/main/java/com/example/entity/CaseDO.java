@@ -21,6 +21,10 @@ public class CaseDO {
      */
     private String title;
     /**
+     * 排序
+     */
+    private Integer sort;
+    /**
      * 描述
      */
     private String description;
